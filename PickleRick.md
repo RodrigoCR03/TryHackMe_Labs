@@ -85,13 +85,15 @@ netcat -lnvp 9999
 ---
 
 ## 5) Estabilização de Shell
-```bash
-python3 -c 'import pty; pty.spawn("/bin/bash")'
-```
-**Erros Possíveis:**
+**Erro apresentado:**
 ```
 /bin/sh: 0: can't access tty; job control turned off
 ```
+
+```bash
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+```
+
 **Correção:**
 ```bash
 export TERM=xterm
