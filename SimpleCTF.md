@@ -1,4 +1,6 @@
-# TASKs:
+# Lab: SimpleCTF (Easy Mode)
+
+## TASKs:
 
 1.  
 2.  
