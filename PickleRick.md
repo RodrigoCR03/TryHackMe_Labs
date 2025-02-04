@@ -46,7 +46,7 @@ gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -u h
 Sup3rS3cretPickl3Ingred.txt: mr. meeseek hair (INFO: FLAG!)
 clue.txt: Look around the file system for the other ingredient.
 ```
-**Comandos Permitidos:**
+**Comandos Não Permitidos:**
 ```php
 $cmds = array("cat", "head", "more", "tail", "nano", "vim", "vi");
 ```
