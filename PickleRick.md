@@ -1,4 +1,4 @@
-# Lab: Pickle Rick
+# Lab: Pickle Rick (Easy Mode)
 
 ## TASKs:
 
