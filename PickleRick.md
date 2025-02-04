@@ -1,6 +1,6 @@
 # Lab: Pickle Rick (Easy Mode)
 
-## TASKs:
+## Capture The Flags (CTF):
 
 1. **What is the first ingredient that Rick needs?** `mr. meeseek hair`
 2. **What is the second ingredient in Rick’s potion?** `1 jerry tear`
