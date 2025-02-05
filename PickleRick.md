@@ -8,6 +8,8 @@
 
 ---
 
+1) Atribuição de Valores
+
 ```
 export IP=10.10.89.179
 ```
