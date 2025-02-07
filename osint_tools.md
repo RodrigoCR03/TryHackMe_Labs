@@ -125,10 +125,41 @@ Abaixo encontra-se uma lista das ferramentas que são amplamente utilizadas para
 
 ---
 
-## 13. **ASCII to Hex Converter**
+## 13. **Have I Been Pwned?**
 - **Descrição:**
-  Ferramenta para converter texto ASCII em código hexadecimal.
+  Serviço que permite verificar se um endereço de e-mail ou senha foi comprometido em vazamentos de dados.
 - **Funcionalidades:**
-  - Realizar conversões rápidas entre ASCII e HEX.
-  - Utilizado em análise de dados codificados.
-- **Link de acesso:** [ASCII to Hex Converter](https://www.asciitohex.com/)
+  - Consultar se um e-mail ou senha foi exposto em bases de dados vazadas.
+  - Alertar utilizadores sobre novas violações de segurança.
+- **Link de acesso:** [Have I Been Pwned?](https://haveibeenpwned.com/)
+
+---
+
+## 14. **DeHashed**
+- **Descrição:**
+  Motor de busca especializado na análise de bases de dados vazadas.
+- **Funcionalidades:**
+  - Procurar credenciais comprometidas, endereços IP e informações pessoais.
+  - Recuperar dados expostos em brechas de segurança.
+- **Link de acesso:** [DeHashed](https://www.dehashed.com/)
+
+---
+
+## 15. **Sherlock**
+- **Descrição:**
+  Ferramenta de OSINT escrita em Python para encontrar perfis de utilizadores em várias plataformas.
+- **Funcionalidades:**
+  - Localizar contas associadas a um nome de utilizador em redes sociais e fóruns.
+- **Link de acesso:** [Sherlock GitHub](https://github.com/sherlock-project/sherlock)
+
+---
+
+## 16. **Reverse Shell Generator**
+- **Descrição:**
+  Ferramenta para gerar comandos para criar shells reversas em ambientes de testes de intrusão.
+- **Funcionalidades:**
+  - Criar comandos para shells em diversas linguagens e protocolos.
+  - Testar conexões reversas em auditorias de segurança.
+- **Link de acesso:** [Reverse Shell Generator](https://www.revshells.com/)
+
+---
